@@ -1,0 +1,122 @@
+.about{
+    padding: 30px 0 71px 0;
+    background-color: var(--dark-color);
+   @include tablet{
+      padding: 40px 0 71px 0;
+    }
+    @include phone-mini{
+      padding: 30px 0 60px 0;
+    }
+    &__container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    @include phone-mini{
+          display: block;
+    }
+
+    }
+    &__title{
+        margin: 0;
+        margin-bottom: 10px;
+        font-family: var(--font-family);
+        font-size: var(--title-size);
+        line-height: 104%;
+        color: var(--text-color);
+        @include phone-mini{
+          font-size: 18px;
+          line-height: auto;
+      }
+    }
+    &__text{
+        margin: 0;
+        font-family: var(--second-family);
+        font-size: var(--text-size);
+        line-height: 28px;
+        color: var(--text-color);
+    @include phone-mini{
+        margin-bottom: 18px;
+        font-size: 14px;
+        line-height: 25px;
+    }
+    }
+    &__img{
+        padding-top: 35px;
+        padding-bottom: 16px;
+
+    @include tablet{
+        object-fit: cover;
+        height: 385px;
+    }
+    @include phone{
+        object-fit: cover;
+        height: 616px;
+    }
+    @include phone-mini{
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 21px;
+        height: 282px;
+    }
+    }
+}
+.subscription{
+    &__title{
+        margin: 0;
+        margin-bottom: 21px;
+        font-family: var(--font-family);
+        font-size: var(--title-size);
+        line-height: 22px;
+        font-weight: 400;
+        color: var(--light-color);
+    @include phone-mini{
+        margin-bottom: 15px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    }
+    &__form{
+        grid-template-columns: 4fr 1fr;
+        gap: 26px;
+
+    @include tablet{
+        display:block;
+          // flex-direction: column;
+        // grid-template-columns: 4fr 1fr;
+
+        }
+    }
+    &__input{
+        padding: 15px 0 15px 23px;
+        border: none;
+        font-family: var(--second-family);
+        font-size: var(--text-size);
+        background-color: #4A4A4A;
+        color: var(--text-color);
+        transition: all 0.3s ease-in-out;
+
+    @include tablet{
+        width: 75%;
+        margin-bottom: 20px;
+        }
+    @include phone{
+        width: 100%;
+    }
+
+    @include phone-mini{
+          width: 100%;
+          padding: 12px 0 12px 23px;
+          font-size: 14px;
+          line-height: 16px;
+        }
+    }
+    &__input:hover{
+       color: var(--button-color);
+    }
+    &__input:focus{
+        outline: 1px solid var(--button-color);
+     }
+    &__input:active{
+        color: var(--light-color);
+     }
+}
+

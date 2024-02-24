@@ -1,0 +1,224 @@
+.header{
+    background-color: var(--dark-color);
+    &__logo{
+        margin-right: auto;
+        max-width: 100%;
+        @include tablet{
+          width: 166px;
+          height: 27px;
+        }
+        @include phone-mini{
+          width: 112px;
+          height: 18px;
+        }
+    }
+    &__container{
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+        background-color: var(--dark-color);
+
+        @include big-desktop{
+          padding: 0 30px;
+        }
+
+        @include tablet {
+          padding: 0 30px;
+       }
+
+        @include phone {
+          width: 100%;
+          display:flex;
+          padding: 27px 28px 60px 30px;
+          justify-content: space-between;
+          min-height: 125px;
+       }
+       @include phone-mini{
+        padding: 5px 20px 55px 20px;
+       }
+    }
+}
+
+.header.open .nav{
+  @include phone-mini{
+    transform: translate(100%);
+}
+}
+.header.open .burger{
+  @include phone-mini{
+    top: 13px;
+    left: 21px;
+}
+}
+
+.header.open .burger::before{
+  @include phone-mini{
+      top: 50%;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      z-index: 10;
+}
+}
+
+.header.open .burger::after{
+  @include phone-mini{
+      width:100%;
+      top: 50%;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      z-index: 10;
+}
+}
+
+.nav {
+    align-items: center;
+
+    @include phone {
+        position:absolute;
+        padding-top: 120px;
+    }
+
+    @include phone-mini{
+        position: absolute;
+        left: -320px;
+        top: 0;
+        width: 320px;
+        height: 100vh;
+        background-color: var(--dark-color);
+        background-image: url();
+        padding: 48px 20px 20px 20px;
+        transition: transform 0.5s ease-in-out;
+        z-index: 2;
+
+        &__item:nth-child(5){
+          margin-bottom: 112px;
+        }
+
+    }
+
+    &__list{
+        align-items: center;
+        margin-right: 119px;
+        gap: 78px;
+
+        @include big-desktop{
+          margin-right: 131px;
+          gap: 60px;
+        }
+
+        @include tablet{
+          margin-right: 100px;
+          gap: 33px;
+        }
+
+        @include phone {
+          width: 100%;
+          margin-right: 0;
+          gap: 71px;
+
+        }
+
+        @include phone-mini {
+          display: block;
+        }
+    }
+
+    &__link{
+        font-family: var(--font-family);
+        font-size: var(--text-size);
+        color: var(--light-color);
+        white-space: nowrap;
+        transition: all 0.3s ease-in-out;
+
+
+        @include phone-mini {
+          display: block;
+          padding: 0;
+          margin-bottom: 30px;
+      }
+    }
+    &__link:hover{
+        color: var(--button-color);
+    }
+    &__link:focus{
+        padding:5px;
+        background-color:var(--focus-color);
+        color: var(--light-color);
+    }
+    &__link:active{
+        color:var(--active-color);
+    }
+
+    &__tel{
+      display: none;
+
+      @include phone-mini {
+        display: block;
+        color: var(--button-color);
+        background-image: url(../img/tel.png);
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-left: 20px;
+
+        &:focus{
+          color: var(--focus-color);
+     }
+        &:hover{
+          color: var(--active-color);
+        }
+        &:active{
+          color: var(--button-color);
+        }
+    }
+    }
+}
+.search-btn path{
+    transition: fill 0.3s ease-in-out;
+}
+.search-btn:focus path{
+    fill: var(--focus-color);
+}
+.search-btn:hover path{
+    fill: var(--button-color);
+}
+.search-btn:active path{
+    fill: var(--active-color);
+}
+.search-form{
+    display: none;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    padding: 5px 2px;
+    width: 342px;
+    height: 30px;
+    background: var(--dark-color);
+
+    &_show{
+      display: flex;
+    }
+
+    &__input{
+    padding: 5px;
+    width: 342px;
+    height: 30px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #E9E9E9;
+    color:var(--light-color);
+    background: var(--dark-color);
+    }
+    &__input:focus{
+    outline: none;
+    border-color: var(--button-color);
+    }
+    &__input:hover{
+      outline: none;
+      border-color: var(--button-color);
+}
+    &__input:active{
+      outline: none;
+      border-color: var(--active-color);
+}
+}

@@ -1,0 +1,144 @@
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.main {
+    height: 100%;
+    font-family: var(--font-family);
+}
+
+.body{
+    margin: 0;
+    min-width: 320px;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+.img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-reset {
+    border: none;
+    padding:0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ @font-face{
+  font-family:'Roboto';
+  src:local("RobotoRegular"),
+  url("../fonts/Roboto-Regular.woff2") format(woff2);
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+  @font-face{
+    font-family:"Roboto";
+    src:local("RobotoBold"),
+    url("../fonts/Roboto-Bold.woff2") format(woff2);
+    font-weight:700;
+    font-style:normal;
+    font-display:swap;
+}
+  @font-face{
+    font-family:"TTFirsNeue";
+    src:local("TTFirsNeueRegular"),
+    url("../fonts/TTFirsNeue-Regular.woff2") format(woff2);
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+}
+  @font-face{
+    font-family:"TTFirsNeue";
+    src:local("TTFirsNeueBold"),
+    url("../fonts/TTFirsNeue-Bold.woff2") format(woff2);
+    font-weight:700;
+    font-style:normal;
+    font-display:swap;
+}
+
+
+.container {
+    margin: 0 auto;
+    max-width: 1290px;
+
+    @include big-desktop{
+      padding: 0 30px;
+    }
+
+    @include phone-mini{
+      padding: 0 21px;
+    }
+}
+
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+.btn{
+    display: block;
+    padding: 15px 22px;
+    font-family: var(--second-family);
+    font-size: var(--text-size);
+    font-weight: 700;
+    background-color: var(--button-color);
+    color: var(--light-color);
+    transition: all 0.3s ease-in-out;
+@include phone-mini{
+    padding: 12px 22px;
+    font-size: 14px;
+    line-height: 16px;
+}
+}
+.btn:hover{
+    outline: 3px solid var(--active-color);
+}
+.btn:focus{
+    background-color: var(--focus-color);
+}
+.btn:active{
+    background-color: var(--active-color);
+}
+
+.burger{
+   @include burger;
+   display: none;
+   position: absolute;
+   top: 80px;
+   color: var(--light-color);
+   width: 20px;
+   height: 18px;
+  //  z-index: 2;
+
+   @include phone-mini{
+    display: block;
+  }
+
+  &::after {
+    width: 50%;
+  }
+  }
+

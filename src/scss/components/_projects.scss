@@ -1,0 +1,317 @@
+.projects{
+    padding-top: 68px;
+    background-color: var(--light-color);
+    @include tablet{
+      padding-top: 78px;
+    }
+    @include phone{
+      padding-top: 58px;
+    }
+    @include phone-mini{
+      padding-top: 52px;
+    }
+    &__container{
+    @include phone-mini{
+      display: block;
+    }
+    }
+    &__list{
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 30px;
+
+        @include tablet {
+          grid-template-columns: repeat(8, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+        }
+        @include phone {
+          grid-template-columns: repeat(6, 1fr);
+          grid-template-rows: repeat(4, 1fr);
+        }
+        @include phone-mini {
+          display: block;
+        }
+    }
+
+    &__title{
+        margin: 0;
+        margin-bottom: 12px;
+        font-family: var(--font-family);
+        font-size: var(--title-size);
+        color: var(--dark-color);
+    @include phone-mini{
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+    }
+
+    &__card:first-child{
+        grid-column: span 2;
+        grid-row: 1/1;
+
+        @include tablet{
+          grid-column: span 2;
+          grid-row: 1/1;
+      }
+        @include phone{
+          height: 300px;
+        }
+        @include phone-mini{
+          margin-bottom: 25px;
+    }
+    }
+    &__card:nth-child(2){
+         grid-column: span 2;
+         grid-row: 1/1;
+         @include tablet{
+          grid-column: span 2;
+          grid-row: 1/1;
+         }
+         @include phone{
+          height: 300px;
+        }
+        @include phone-mini{
+          height: 278px;
+          margin-bottom: 25px;
+
+    }
+    }
+    &__card:nth-child(3){
+         grid-column: span 2;
+
+        @include tablet{
+          grid-column: 5/9;
+          grid-row: 1/1;
+        }
+        @include phone{
+          grid-column: 5/7;
+          grid-row: 1/1;
+          height: 300px;
+        }
+        @include phone-mini{
+          height: 278px;
+          margin-bottom: 45px;
+    }
+      }
+    &__card:nth-child(4) {
+        grid-column: span 6;
+
+        @include tablet {
+          grid-column: 1/6;
+          grid-row: 2/2;
+        }
+        @include phone {
+          grid-column: 1/7;
+          grid-row: 2/2;
+        }
+        @include phone-mini{
+          height: 422px;
+          margin-bottom: 25px;
+        }
+    }
+    &__card:nth-child(5) {
+        grid-column: span 6;
+
+        @include tablet {
+          grid-column: 4/9;
+        }
+
+        @include phone {
+          grid-column: 1/7;
+          grid-row: 4/4;
+        }
+        @include phone-mini{
+          height: 422px;
+          margin-bottom: 25px;
+        }
+    }
+    &__card:nth-child(6) {
+        grid-column: span 3;
+
+        @include tablet {
+          grid-column: 6/9;
+          grid-row: 3/2;
+        }
+        @include phone {
+          grid-column: 1/4;
+          grid-row: 3/3;
+        }
+        @include phone-mini{
+          margin-bottom: 25px;
+        }
+    }
+    &__card:nth-child(7) {
+         grid-column: span 3;
+
+        @include tablet {
+          grid-column: 1/4;
+          grid-row: 3/3;
+      }
+        @include phone {
+          grid-column: 4/7;
+          grid-row: 3/3;
+      }
+  }
+
+    &__item{
+      position: relative;
+  }
+
+    &__item_big{
+        display: block;
+        position: relative;
+    }
+    &__img{
+        display: block;
+        height:100%;
+        width: 100%;
+    @include tablet{
+        object-fit: cover;
+        height: 184px;
+    }
+    }
+    &__img:nth-child(3){
+    @include tablet{
+        object-fit: cover;
+        height: 84px;
+      }
+    }
+    &__img_big{
+       min-height: 100%;
+    @include tablet{
+      object-fit: cover;
+      height: auto;
+    }
+    @include tablet{
+      object-fit: cover;
+      height: 300px;
+    }
+    @include phone-mini{
+       height: 422px;
+    }
+    }
+    &__note{
+        position:absolute;
+        padding: 6px 14px;
+        right:7px;
+        top:7px;
+        background-color: var(--dark-color);
+        font-family: var(--second-family);
+        font-size: var(--note-size);
+        color: var(--light-color);
+    @include phone-mini{
+        font-size: 12px;
+    }
+    }
+    &__descr{
+        margin: 0;
+        margin-top: 19px;
+        margin-bottom: 17px;
+        white-space: normal;
+        font-family: var(--second-family);
+        font-size: var(--text-size);
+        line-height: 122%;
+        color: var(--dark-color);
+    }
+    &__calendar{
+        margin-top: auto;
+        background-image: url(../img/calendar-img.png);
+        background-position: left;
+        background-repeat: no-repeat;
+    @include phone-mini{
+        margin-bottom: 0;
+    }
+    }
+    &__date{
+        margin-top: auto;
+        margin-left: 20px;
+        margin-bottom: 2px;
+        font-family: var(--second-family);
+        font-size: var(--date-size);
+        color: var(--gray-color);
+    }
+    &__bottom{
+        display: block;
+    }
+    &__bottom_small{
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+    }
+    &__bottom_big{
+        position: absolute;
+        max-width: 347px;
+        padding: 22px 30px;
+        top:0;
+        left: 0;
+    @include phone{
+      padding: 27px 30px;
+    }
+    @include phone-mini{
+        top:175px;
+        bottom:0;
+        left:0;
+    }
+    }
+    &__headline{
+        margin: 0;
+        margin-bottom: 5px;
+        font-family: var(--font-family);
+        font-size: 24px;
+        line-height: 104%;
+        color: var(--light-color);
+    }
+    &__descr_right{
+        margin: 0;
+        margin-bottom: 54px;
+        white-space: wrap;
+        font-family: var(--second-family);
+        font-size: var(--text-size);
+        line-height: 22px;
+        color:var(--light-color);
+    @include phone-mini{
+        line-height: 18px;
+        margin-bottom: 16px;
+    }
+    }
+    &__descr_left{
+        margin: 0;
+        margin-bottom: 101px;
+        white-space: wrap;
+        font-family: var(--second-family);
+        font-size: 15px;
+        line-height: 23px;
+        color:var(--light-color);
+        @include phone-mini{
+          line-height: 18px;
+          margin-bottom: 16px;
+      }
+    }
+    &__btn{
+        display: block;
+        padding: 15px 22px;
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: var(--text-size);
+        background-color: transparent;
+        outline: 3px solid var(--button-color);
+        color: var(--light-color);
+        transition: all 0.3s ease-in-out;
+    @include phone-mini{
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    }
+    &__btn:hover{
+        background-color: var(--button-color);
+    }
+    &__btn:focus{
+        background-color: var(--button-color);
+        outline: 3px solid var(--active-color);
+    }
+    &__btn:active{
+        background-color: var(--active-color);
+    }
+}
